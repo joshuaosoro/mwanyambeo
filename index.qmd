@@ -7,5 +7,5 @@ format: html
 
 ```{r}
 data <- readxl::read_excel("mwanyambeo_data.xlsx")
-head(data)
+data
 ```
