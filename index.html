@@ -98,76 +98,275 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"mwanyambeo_data.xlsx"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kbl</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n=</span><span class="dv">65</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 64 × 2
-   Member           `Charles Mose Osoro`
-   &lt;chr&gt;                           &lt;dbl&gt;
- 1 Japhet Orina                      500
- 2 Musa Ombui                        500
- 3 Ogega Ototo                       500
- 4 Joshua Osoro                      500
- 5 Mohamed Orina                     500
- 6 Kennedy Rasugu                    500
- 7 Dennis Ombui                      500
- 8 Ogega Ogachi                      500
- 9 Alex Omonywa                      500
-10 Orina Ogachi                      500
-11 David Mosoti                      500
-12 Robert Oichoe                     500
-13 Joseph Oichoe                     500
-14 Solomon Obwogi                    500
-15 Paul Rasugu                       500
-16 Kennedy Ombui                     500
-17 Okindo Ogachi                     500
-18 Nicholas Orina                    500
-19 Edward Orina                      500
-20 Bob Rasugu                        500
-21 Nyabuto Rasugu                    500
-22 Job Rasugu                        500
-23 Focus Rasugu                      500
-24 Adonija Orina                       0
-25 Boniface Nyabuto                  500
-26 Keronche Kinara                     0
-27 Jared Ogachi                        0
-28 Francis Osoro                     500
-29 Samson Orina                      500
-30 Abraham Orina                     500
-31 Butchess Sindiga                  500
-32 David Ototo                         0
-33 Sindiga Motaroki                  500
-34 Kinara Motaroki                   500
-35 Nyabuto Onsabwa                   500
-36 Derrick Orina                     500
-37 Ombui Kinara                      500
-38 Griffins Orina                    500
-39 Hillary Osoro                     500
-40 Isaya Osoro                       500
-41 Justin Kinara                     500
-42 Evans Ogachi                      500
-43 Makori Magembe                    500
-44 Jackson Osoro                     500
-45 Andrew Osoro                      500
-46 Alan Osoro                        500
-47 Boi Nyabuto                         0
-48 Nicholas Onyiego                  500
-49 Obure Ogachi                        0
-50 Machungo Onsabwa                    0
-51 Mose Onsabwa                        0
-52 Newton Nyabuto                      0
-53 Nyangau Onsabwa                     0
-54 Nyamao Ototo                        0
-55 Nyabuto Ototo                       0
-56 Keronche Okenye                   500
-57 John Kastone                      500
-58 Jonathan Kastone                  500
-59 Keronche Osoro                    500
-60 Nicholas Ogega                    500
-61 Isaya Ayiera                      500
-62 William Ayiera                    500
-63 Geoffrey Onderi                   500
-64 Total                           25500</code></pre>
+<pre><code>&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Member &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Charles Mose Osoro &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Japhet Orina &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Musa Ombui &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ogega Ototo &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joshua Osoro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mohamed Orina &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kennedy Rasugu &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dennis Ombui &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ogega Ogachi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Alex Omonywa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Orina Ogachi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; David Mosoti &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Robert Oichoe &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joseph Oichoe &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Solomon Obwogi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Paul Rasugu &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kennedy Ombui &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Okindo Ogachi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nicholas Orina &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Edward Orina &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bob Rasugu &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nyabuto Rasugu &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Job Rasugu &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Focus Rasugu &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Adonija Orina &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Boniface Nyabuto &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Keronche Kinara &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jared Ogachi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Francis Osoro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Samson Orina &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Abraham Orina &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Butchess Sindiga &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; David Ototo &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sindiga Motaroki &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kinara Motaroki &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nyabuto Onsabwa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Derrick Orina &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ombui Kinara &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Griffins Orina &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hillary Osoro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Isaya Osoro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Justin Kinara &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Evans Ogachi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Makori Magembe &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jackson Osoro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Andrew Osoro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Alan Osoro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Boi Nyabuto &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nicholas Onyiego &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Obure Ogachi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Machungo Onsabwa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mose Onsabwa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Newton Nyabuto &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nyangau Onsabwa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nyamao Ototo &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nyabuto Ototo &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Keronche Okenye &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Kastone &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jonathan Kastone &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Keronche Osoro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nicholas Ogega &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Isaya Ayiera &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; William Ayiera &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Geoffrey Onderi &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25500 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
 </div>
 </div>
 

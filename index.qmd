@@ -8,6 +8,6 @@ format: html
 data <- readxl::read_excel("mwanyambeo_data.xlsx")
 
 data |> 
- 
+  kableExtra::kbl() |> 
   print(n=65)
 ```
