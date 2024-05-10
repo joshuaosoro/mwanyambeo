@@ -7,5 +7,6 @@ format: html
 
 ```{r}
 data <- readxl::read_excel("mwanyambeo_data.xlsx")
-print(data)
+
+data |> print(n=65)
 ```

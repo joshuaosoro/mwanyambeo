@@ -98,22 +98,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="mwanyambeo">Mwanyambeo</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"mwanyambeo_data.xlsx"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> <span class="fu">print</span>(<span class="at">n=</span><span class="dv">65</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 64 × 2
-   Member         `Charles Mose Osoro`
-   &lt;chr&gt;                         &lt;dbl&gt;
- 1 Japhet Orina                    500
- 2 Musa Ombui                      500
- 3 Ogega Ototo                     500
- 4 Joshua Osoro                    500
- 5 Mohamed Orina                   500
- 6 Kennedy Rasugu                  500
- 7 Dennis Ombui                    500
- 8 Ogega Ogachi                    500
- 9 Alex Omonywa                    500
-10 Orina Ogachi                    500
-# ℹ 54 more rows</code></pre>
+   Member           `Charles Mose Osoro`
+   &lt;chr&gt;                           &lt;dbl&gt;
+ 1 Japhet Orina                      500
+ 2 Musa Ombui                        500
+ 3 Ogega Ototo                       500
+ 4 Joshua Osoro                      500
+ 5 Mohamed Orina                     500
+ 6 Kennedy Rasugu                    500
+ 7 Dennis Ombui                      500
+ 8 Ogega Ogachi                      500
+ 9 Alex Omonywa                      500
+10 Orina Ogachi                      500
+11 David Mosoti                      500
+12 Robert Oichoe                     500
+13 Joseph Oichoe                     500
+14 Solomon Obwogi                    500
+15 Paul Rasugu                       500
+16 Kennedy Ombui                     500
+17 Okindo Ogachi                     500
+18 Nicholas Orina                    500
+19 Edward Orina                      500
+20 Bob Rasugu                        500
+21 Nyabuto Rasugu                    500
+22 Job Rasugu                        500
+23 Focus Rasugu                      500
+24 Adonija Orina                       0
+25 Boniface Nyabuto                  500
+26 Keronche Kinara                     0
+27 Jared Ogachi                        0
+28 Francis Osoro                     500
+29 Samson Orina                      500
+30 Abraham Orina                     500
+31 Butchess Sindiga                  500
+32 David Ototo                         0
+33 Sindiga Motaroki                  500
+34 Kinara Motaroki                   500
+35 Nyabuto Onsabwa                   500
+36 Derrick Orina                     500
+37 Ombui Kinara                      500
+38 Griffins Orina                    500
+39 Hillary Osoro                     500
+40 Isaya Osoro                       500
+41 Justin Kinara                     500
+42 Evans Ogachi                      500
+43 Makori Magembe                    500
+44 Jackson Osoro                     500
+45 Andrew Osoro                      500
+46 Alan Osoro                        500
+47 Boi Nyabuto                         0
+48 Nicholas Onyiego                  500
+49 Obure Ogachi                        0
+50 Machungo Onsabwa                    0
+51 Mose Onsabwa                        0
+52 Newton Nyabuto                      0
+53 Nyangau Onsabwa                     0
+54 Nyamao Ototo                        0
+55 Nyabuto Ototo                       0
+56 Keronche Okenye                   500
+57 John Kastone                      500
+58 Jonathan Kastone                  500
+59 Keronche Osoro                    500
+60 Nicholas Ogega                    500
+61 Isaya Ayiera                      500
+62 William Ayiera                    500
+63 Geoffrey Onderi                   500
+64 Total                           25500</code></pre>
 </div>
 </div>
 </section>
