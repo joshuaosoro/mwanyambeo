@@ -9,6 +9,8 @@ data <- readxl::read_excel("mwanyambeo_data.xlsx")
 
 data |> 
   kableExtra::kbl() |> 
-  #kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) |> 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) |> 
+  kableExtra::kable_material("basic", font_size = 11, html_font = "sans") |> 
+  kableExtra::column_spec(1, bold = T)
   print(n=65)
 ```
