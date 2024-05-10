@@ -6,7 +6,11 @@ format: html
 ## Mwanyambeo
 
 ```{r}
+library()
 data <- readxl::read_excel("mwanyambeo_data.xlsx")
 
-data |> print(n=65)
+data |> 
+  kableExtra::kbl() |> 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) |> 
+  print(n=65)
 ```
