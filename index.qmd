@@ -1,11 +1,13 @@
 ---
 title: "mwanyambeo"
 format: html
+editor: visual
 ---
 
-```{r}
+```{r echo=FALSE}
 library(gt)
 library(dplyr)
+library(htmltools)
 
 data <- readxl::read_excel("mwanyambeo_data.xlsx")
 
@@ -15,5 +17,77 @@ data |>
 ```
 
 ```{r}
-data |> gt()
+gt_table <- data |> gt()
+
+gt_table <- gt_table %>%
+  tab_options(
+    table.width = pct(100)
+  )
+
+
+gt_table |> gt_preview()
+```
+
+```{r echo=FALSE}
+columns_to_style <- names(data)[-1]  # Exclude 'Member' column
+
+for (col in columns_to_style) {
+  gt_table <- gt_table |> 
+    tab_style(
+      style = list(
+        cell_fill(color = "green"),
+        cell_text(color = "white")
+      ),
+      locations = cells_body(
+        columns = col,
+        rows = col >= 500
+      )
+    ) |> 
+    tab_style(
+      style = list(
+        cell_fill(color = "red"),
+        cell_text(color = "white")
+      ),
+      locations = cells_body(
+        columns = col,
+        rows = col <= 0
+      )
+    )
+}
+
+gt_table
+```
+
+```{r echo=FALSE}
+custom_css <- "
+  .gt_table {
+    overflow-x: auto;
+    display: block;
+    max-width: 100%;
+  }
+  .gt_table th, .gt_table td {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  .gt_table th {
+    top: 0;
+    background: white;
+    z-index: 1;
+  }
+  .gt_table td:first-child,
+  .gt_table th:first-child {
+    left: 0;
+    background: white;
+    z-index: 2;
+  }
+"
+
+# Create the HTML content with the custom CSS
+html_content <- htmltools::tags$div(
+  htmltools::tags$style(HTML(custom_css)),
+  as_raw_html(gt_table)
+)
+
+# Display the HTML content in the viewer (if using RStudio or compatible IDE)
+htmltools::browsable(html_content)
 ```
