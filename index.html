@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -95,278 +61,1326 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"mwanyambeo_data.xlsx"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kbl</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n=</span><span class="dv">65</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; Member &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Charles Mose Osoro &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Japhet Orina &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Musa Ombui &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Ogega Ototo &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Joshua Osoro &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Mohamed Orina &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Kennedy Rasugu &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Dennis Ombui &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Ogega Ogachi &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Alex Omonywa &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Orina Ogachi &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; David Mosoti &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Robert Oichoe &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Joseph Oichoe &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Solomon Obwogi &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Paul Rasugu &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Kennedy Ombui &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Okindo Ogachi &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nicholas Orina &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Edward Orina &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Bob Rasugu &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nyabuto Rasugu &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Job Rasugu &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Focus Rasugu &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Adonija Orina &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Boniface Nyabuto &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Keronche Kinara &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Jared Ogachi &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Francis Osoro &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Samson Orina &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Abraham Orina &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Butchess Sindiga &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; David Ototo &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Sindiga Motaroki &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Kinara Motaroki &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nyabuto Onsabwa &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Derrick Orina &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Ombui Kinara &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Griffins Orina &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Hillary Osoro &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Isaya Osoro &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Justin Kinara &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Evans Ogachi &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Makori Magembe &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Jackson Osoro &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Andrew Osoro &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Alan Osoro &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Boi Nyabuto &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nicholas Onyiego &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Obure Ogachi &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Machungo Onsabwa &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Mose Onsabwa &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Newton Nyabuto &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nyangau Onsabwa &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nyamao Ototo &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nyabuto Ototo &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Keronche Okenye &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; John Kastone &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Jonathan Kastone &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Keronche Osoro &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nicholas Ogega &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Isaya Ayiera &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; William Ayiera &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Geoffrey Onderi &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 500 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 25500 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
+<pre><code># A tibble: 64 × 2
+   Member           `Charles Mose Osoro`
+   &lt;chr&gt;                           &lt;dbl&gt;
+ 1 Japhet Orina                      500
+ 2 Musa Ombui                        500
+ 3 Ogega Ototo                       500
+ 4 Joshua Osoro                      500
+ 5 Mohamed Orina                     500
+ 6 Kennedy Rasugu                    500
+ 7 Dennis Ombui                      500
+ 8 Ogega Ogachi                      500
+ 9 Alex Omonywa                      500
+10 Orina Ogachi                      500
+11 David Mosoti                      500
+12 Robert Oichoe                     500
+13 Joseph Oichoe                     500
+14 Solomon Obwogi                    500
+15 Paul Rasugu                       500
+16 Kennedy Ombui                     500
+17 Okindo Ogachi                     500
+18 Nicholas Orina                    500
+19 Edward Orina                      500
+20 Bob Rasugu                        500
+21 Nyabuto Rasugu                    500
+22 Job Rasugu                        500
+23 Focus Rasugu                      500
+24 Adonija Orina                       0
+25 Boniface Nyabuto                  500
+26 Keronche Kinara                     0
+27 Jared Ogachi                        0
+28 Francis Osoro                     500
+29 Samson Orina                      500
+30 Abraham Orina                     500
+31 Butchess Sindiga                  500
+32 David Ototo                         0
+33 Sindiga Motaroki                  500
+34 Kinara Motaroki                   500
+35 Nyabuto Onsabwa                   500
+36 Derrick Orina                     500
+37 Ombui Kinara                      500
+38 Griffins Orina                    500
+39 Hillary Osoro                     500
+40 Isaya Osoro                       500
+41 Justin Kinara                     500
+42 Evans Ogachi                      500
+43 Makori Magembe                    500
+44 Jackson Osoro                     500
+45 Andrew Osoro                      500
+46 Alan Osoro                        500
+47 Boi Nyabuto                         0
+48 Nicholas Onyiego                  500
+49 Obure Ogachi                        0
+50 Machungo Onsabwa                    0
+51 Mose Onsabwa                        0
+52 Newton Nyabuto                      0
+53 Nyangau Onsabwa                     0
+54 Nyamao Ototo                        0
+55 Nyabuto Ototo                       0
+56 Keronche Okenye                   500
+57 John Kastone                      500
+58 Jonathan Kastone                  500
+59 Keronche Osoro                    500
+60 Nicholas Ogega                    500
+61 Isaya Ayiera                      500
+62 William Ayiera                    500
+63 Geoffrey Onderi                   500
+64 Total                           25500</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="obboagsoiu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#obboagsoiu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#obboagsoiu thead, #obboagsoiu tbody, #obboagsoiu tfoot, #obboagsoiu tr, #obboagsoiu td, #obboagsoiu th {
+  border-style: none;
+}
+
+#obboagsoiu p {
+  margin: 0;
+  padding: 0;
+}
+
+#obboagsoiu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#obboagsoiu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#obboagsoiu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#obboagsoiu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#obboagsoiu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#obboagsoiu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#obboagsoiu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#obboagsoiu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#obboagsoiu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#obboagsoiu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#obboagsoiu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#obboagsoiu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#obboagsoiu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#obboagsoiu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#obboagsoiu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obboagsoiu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#obboagsoiu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#obboagsoiu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#obboagsoiu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obboagsoiu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#obboagsoiu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obboagsoiu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#obboagsoiu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obboagsoiu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#obboagsoiu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obboagsoiu .gt_left {
+  text-align: left;
+}
+
+#obboagsoiu .gt_center {
+  text-align: center;
+}
+
+#obboagsoiu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#obboagsoiu .gt_font_normal {
+  font-weight: normal;
+}
+
+#obboagsoiu .gt_font_bold {
+  font-weight: bold;
+}
+
+#obboagsoiu .gt_font_italic {
+  font-style: italic;
+}
+
+#obboagsoiu .gt_super {
+  font-size: 65%;
+}
+
+#obboagsoiu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#obboagsoiu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#obboagsoiu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#obboagsoiu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#obboagsoiu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#obboagsoiu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#obboagsoiu .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Member">Member</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Charles Mose Osoro">Charles Mose Osoro</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">1</th>
+<td headers="stub_1_1 Member" class="gt_row gt_left">Japhet Orina</td>
+<td headers="stub_1_1 Charles Mose Osoro" class="gt_row gt_right">500</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">2</th>
+<td headers="stub_1_2 Member" class="gt_row gt_left">Musa Ombui</td>
+<td headers="stub_1_2 Charles Mose Osoro" class="gt_row gt_right">500</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">3</th>
+<td headers="stub_1_3 Member" class="gt_row gt_left">Ogega Ototo</td>
+<td headers="stub_1_3 Charles Mose Osoro" class="gt_row gt_right">500</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">4</th>
+<td headers="stub_1_4 Member" class="gt_row gt_left">Joshua Osoro</td>
+<td headers="stub_1_4 Charles Mose Osoro" class="gt_row gt_right">500</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">5</th>
+<td headers="stub_1_5 Member" class="gt_row gt_left">Mohamed Orina</td>
+<td headers="stub_1_5 Charles Mose Osoro" class="gt_row gt_right">500</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier; font-size: x-small; background-color: #E4E4E4;">6..63</th>
+<td headers="stub_1_6 Member" class="gt_row gt_left" style="background-color: #E4E4E4;"></td>
+<td headers="stub_1_6 Charles Mose Osoro" class="gt_row gt_right" style="background-color: #E4E4E4;"></td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_right gt_stub" style="font-family: Courier;">64</th>
+<td headers="stub_1_7 Member" class="gt_row gt_left">Total</td>
+<td headers="stub_1_7 Charles Mose Osoro" class="gt_row gt_right">25500</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="caotdyzcly" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#caotdyzcly table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#caotdyzcly thead, #caotdyzcly tbody, #caotdyzcly tfoot, #caotdyzcly tr, #caotdyzcly td, #caotdyzcly th {
+  border-style: none;
+}
+
+#caotdyzcly p {
+  margin: 0;
+  padding: 0;
+}
+
+#caotdyzcly .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#caotdyzcly .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#caotdyzcly .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#caotdyzcly .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#caotdyzcly .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#caotdyzcly .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#caotdyzcly .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#caotdyzcly .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#caotdyzcly .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#caotdyzcly .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#caotdyzcly .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#caotdyzcly .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#caotdyzcly .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#caotdyzcly .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#caotdyzcly .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#caotdyzcly .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#caotdyzcly .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#caotdyzcly .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#caotdyzcly .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#caotdyzcly .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#caotdyzcly .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#caotdyzcly .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#caotdyzcly .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#caotdyzcly .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#caotdyzcly .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#caotdyzcly .gt_left {
+  text-align: left;
+}
+
+#caotdyzcly .gt_center {
+  text-align: center;
+}
+
+#caotdyzcly .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#caotdyzcly .gt_font_normal {
+  font-weight: normal;
+}
+
+#caotdyzcly .gt_font_bold {
+  font-weight: bold;
+}
+
+#caotdyzcly .gt_font_italic {
+  font-style: italic;
+}
+
+#caotdyzcly .gt_super {
+  font-size: 65%;
+}
+
+#caotdyzcly .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#caotdyzcly .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#caotdyzcly .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#caotdyzcly .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#caotdyzcly .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#caotdyzcly .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#caotdyzcly .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Member">Member</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Charles Mose Osoro">Charles Mose Osoro</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Member" class="gt_row gt_left">Japhet Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Musa Ombui</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Ogega Ototo</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Joshua Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Mohamed Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Kennedy Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Dennis Ombui</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Ogega Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Alex Omonywa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Orina Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">David Mosoti</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Robert Oichoe</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Joseph Oichoe</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Solomon Obwogi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Paul Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Kennedy Ombui</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Okindo Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Nicholas Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Edward Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Bob Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Nyabuto Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Job Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Focus Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Adonija Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Boniface Nyabuto</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Keronche Kinara</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Jared Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Francis Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Samson Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Abraham Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Butchess Sindiga</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">David Ototo</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Sindiga Motaroki</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Kinara Motaroki</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Nyabuto Onsabwa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Derrick Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Ombui Kinara</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Griffins Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Hillary Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Isaya Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Justin Kinara</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Evans Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Makori Magembe</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Jackson Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Andrew Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Alan Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Boi Nyabuto</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Nicholas Onyiego</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Obure Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Machungo Onsabwa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Mose Onsabwa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Newton Nyabuto</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Nyangau Onsabwa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Nyamao Ototo</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Nyabuto Ototo</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">0</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Keronche Okenye</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">John Kastone</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Jonathan Kastone</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Keronche Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Nicholas Ogega</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Isaya Ayiera</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">William Ayiera</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Geoffrey Onderi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">500</td></tr>
+    <tr><td headers="Member" class="gt_row gt_left">Total</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="background-color: #00FF00; color: #FFFFFF;">25500</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div>
+<style>
+  .gt_table {
+    overflow-x: auto;
+    display: block;
+    max-width: 100%;
+  }
+  .gt_table th, .gt_table td {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  .gt_table th {
+    top: 0;
+    background: white;
+    z-index: 1;
+  }
+  .gt_table td:first-child,
+  .gt_table th:first-child {
+    left: 0;
+    background: white;
+    z-index: 2;
+  }
+</style>
+<div id="fxsijcutea" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  
+  <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: 100%; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" width="100%" bgcolor="#FFFFFF">
+  <thead style="border-style: none;">
+    <tr class="gt_col_headings" style="border-style: none; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Member" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left;" bgcolor="#FFFFFF" valign="bottom" align="left">Member</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Charles Mose Osoro" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">Charles Mose Osoro</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body" style="border-style: none; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Japhet Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Musa Ombui</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Ogega Ototo</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Joshua Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Mohamed Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Kennedy Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Dennis Ombui</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Ogega Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Alex Omonywa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Orina Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">David Mosoti</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Robert Oichoe</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Joseph Oichoe</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Solomon Obwogi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Paul Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Kennedy Ombui</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Okindo Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Nicholas Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Edward Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Bob Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Nyabuto Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Job Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Focus Rasugu</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Adonija Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Boniface Nyabuto</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Keronche Kinara</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Jared Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Francis Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Samson Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Abraham Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Butchess Sindiga</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">David Ototo</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Sindiga Motaroki</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Kinara Motaroki</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Nyabuto Onsabwa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Derrick Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Ombui Kinara</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Griffins Orina</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Hillary Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Isaya Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Justin Kinara</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Evans Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Makori Magembe</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Jackson Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Andrew Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Alan Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Boi Nyabuto</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Nicholas Onyiego</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Obure Ogachi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Machungo Onsabwa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Mose Onsabwa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Newton Nyabuto</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Nyangau Onsabwa</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Nyamao Ototo</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Nyabuto Ototo</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">0</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Keronche Okenye</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">John Kastone</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Jonathan Kastone</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Keronche Osoro</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Nicholas Ogega</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Isaya Ayiera</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">William Ayiera</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Geoffrey Onderi</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">500</td></tr>
+    <tr style="border-style: none;"><td headers="Member" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Total</td>
+<td headers="Charles Mose Osoro" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; background-color: #00FF00; color: #FFFFFF;" bgcolor="#00FF00" valign="middle" align="right">25500</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
 </div>
 </div>
 

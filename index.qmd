@@ -16,7 +16,7 @@ data |>
 
 ```
 
-```{r}
+```{r echo=FALSE}
 gt_table <- data |> gt()
 
 gt_table <- gt_table %>%
