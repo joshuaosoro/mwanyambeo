@@ -4,10 +4,16 @@ format: html
 ---
 
 ```{r}
+library(gt)
+library(dplyr)
 
 data <- readxl::read_excel("mwanyambeo_data.xlsx")
 
 data |> 
-  kableExtra::kbl() |> 
   print(n=65)
+
+```
+
+```{r}
+data |> gt()
 ```
