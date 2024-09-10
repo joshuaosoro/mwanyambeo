@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Get the operating system in use
-        run: echo echo lsb_release -a
+        run: lsb_release -a
         
       - name: Echo workflow start message
         run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
